@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <h1>ScaleOutDemo - SERVER A</h1>
+
+    <div>
+        This section is connected to server A. Click the button to create a object on server A that will be scaled to B, C
+        <br />
+        <button id="createA">CREATE A</button>
+    </div>
+    <h3>Info A</h3>
+    <div data-bind="foreach:vm.A">
+        <div>
+            Person created with id <span data-bind="text:person.id"></span> at <span data-bind="text:person.time"></span>.<br />
+            Name <span data-bind="text:person.name"></span> and Age <span data-bind="text:person.age"></span>
+            The person was created on server <span style="font-weight:900" data-bind="text:server"></span>
+        </div>
+    </div>
+
+    <hr />
+
+    <h1>ScaleOutDemo - SERVER B</h1>
+
+    <div>
+        This section is connected to server B. Click the button to create a object on server B that will be scaled to A, C
+        <br />
+        <button id="createB">CREATE B</button>
+    </div>
+    <h3>Info B</h3>
+    <div data-bind="foreach:vm.B">
+        <div>
+            Person created with id <span data-bind="text:person.id"></span> at <span data-bind="text:person.time"></span>.<br />
+            Name <span data-bind="text:person.name"></span> and Age <span data-bind="text:person.age"></span>
+            The person was created on server <span style="font-weight:900" data-bind="text:server"></span>
+        </div>
+    </div>
+    <hr />
+    <h1>ScaleOutDemo - SERVER C</h1>
+
+    <div>
+        This section is connected to server C. Click the button to create a object on server C that will be scaled to A, B
+        <br />
+        <button id="createC">CREATE C</button>
+    </div>
+    <h3>Info C</h3>
+    <div data-bind="foreach:vm.C">
+        <div>
+            Person created with id <span data-bind="text:person.id"></span> at <span data-bind="text:person.time"></span>.<br />
+            Name <span data-bind="text:person.name"></span> and Age <span data-bind="text:person.age"></span>
+            The person was created on server <span style="font-weight:900" data-bind="text:server"></span>
+        </div>
+    </div>
+
+    <script src="scripts/knockout-3.4.0.js"></script>
+    <script src="scripts/XSockets/xsockets.latest.js"></script>
+    <script>
+        //knockout
+        var vm = {
+            A: ko.observableArray([]),
+            B: ko.observableArray([]),
+            C: ko.observableArray([])
+        };
+        ko.applyBindings(vm);
+
+        // SERVER A
+        var serverA = 'ws://localhost:4502';
+        var connA = new xsockets.client(serverA, ['person']);
+        connA.setPersistentId(xsockets.utils.guid());
+        var personA = connA.controller('person');
+
+        personA.onOpen = function () {
+
+            personA.on('personcreated', function (d) {
+                vm.A.unshift(d);
+            });
+
+            document.querySelector('#createA').onclick = function (e) {
+                e.stopPropagation();
+                personA.invoke('createperson', { name: 'steve A', age: 40 });
+            }
+        };
+
+        connA.autoReconnect(true);
+        connA.open();
+
+
+        // SERVER B
+        var serverB = 'ws://localhost:4503';
+        var connB = new xsockets.client(serverB, ['person']);
+        connB.setPersistentId(xsockets.utils.guid());
+        var personB = connB.controller('person');
+
+        personB.onOpen = function () {
+
+            personB.on('personcreated', function (d) {
+                vm.B.unshift(d);
+            });
+
+            document.querySelector('#createB').onclick = function (e) {
+                e.stopPropagation();
+                personB.invoke('createperson', { name: 'steve B', age: 40 });
+            }
+        };
+
+        connB.autoReconnect(true);
+        connB.open();
+
+        // SERVER C
+        var serverC = 'ws://localhost:4504';
+        var connC = new xsockets.client(serverC, ['person']);
+        connC.setPersistentId(xsockets.utils.guid());
+        var personC = connC.controller('person');
+
+        personC.onOpen = function () {
+
+            personC.on('personcreated', function (d) {
+                vm.C.unshift(d);
+            });
+
+            document.querySelector('#createC').onclick = function (e) {
+                e.stopPropagation();
+                personC.invoke('createperson', { name: 'steve C', age: 40 });
+            }
+        };
+
+        connC.autoReconnect(true);
+        connC.open();
+    </script>
+</body>
+
+</html>
