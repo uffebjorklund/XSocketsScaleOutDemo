@@ -1,8 +1,8 @@
 #XSockets ScaleOut Demo
 
-A simple solution that shows how to scale out XSockets even though you have CRUD operations.
+A solution that shows how to scale out XSockets even though you have CRUD operations.
 
-The solution has 3 servers in the cluster and one webpage that created a conneciton to each server. 
+The solution has 3 servers in the cluster and one webpage that created a connection to each server. 
 
 The sample includes
 
