@@ -75,7 +75,7 @@
 
         personA.onOpen = function () {
 
-            personA.on('personcreated', function (d) {
+            personA.subscribe('personcreated', function (d) {
                 vm.A.unshift(d);
             });
 
@@ -97,7 +97,7 @@
 
         personB.onOpen = function () {
 
-            personB.on('personcreated', function (d) {
+            personB.subscribe('personcreated', function (d) {
                 vm.B.unshift(d);
             });
 
@@ -118,7 +118,7 @@
 
         personC.onOpen = function () {
 
-            personC.on('personcreated', function (d) {
+            personC.subscribe('personcreated', function (d) {
                 vm.C.unshift(d);
             });
 

@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\DataPump.cs" />
     <Compile Include="Controller\PersonConrtoller.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Model\Person.cs" />

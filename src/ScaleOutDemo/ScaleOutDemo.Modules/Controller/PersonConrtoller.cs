@@ -8,7 +8,8 @@ namespace ScaleOutDemo.Modules
     using Model;
     using System;
     using XSockets.Core.Common.Protocol;
-
+    using XSockets.Plugin.Framework;
+    using XSockets.Core.Common.Enterprise;
     public class PersonController : XSocketController
     {
         public async Task CreatePerson(Person p)
@@ -27,13 +28,17 @@ namespace ScaleOutDemo.Modules
                 server = Info.SERVER
             };
             var o = m.AsMessage("personcreated");
-            await this.ScaleOut(o, MessageDirection.Out);
+            o.Controller = "person";            
+
+            //Scale out the info to other servers in the cluster
+            await Composable.GetExport<IXSocketsScaleOut>().Publish(MessageDirection.Out, o);
+            //Tell clients on this server
             await this.PersonCreated(o);
         }
 
         public async Task PersonCreated(IMessage m)
         {
-            await this.InvokeToAll(m);
+            await this.PublishToAll(m);
         }
     }
 }
