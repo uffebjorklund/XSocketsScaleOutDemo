@@ -34,8 +34,6 @@ C:\Users\Uffe\Desktop\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\XSockets.Serve
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\ScaleOutDemo.ServerB.exe.config
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\obj\Debug\ScaleOutDemo.ServerB.exe
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\obj\Debug\ScaleOutDemo.ServerB.pdb
-C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\tools\index.html
-C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\tools\xsockets.latest.js
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\ScaleOutDemo.ServerB.exe
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\ScaleOutDemo.ServerB.pdb
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\Newtonsoft.Json.dll
@@ -50,7 +48,6 @@ C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDem
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\XSockets.Logger.dll
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\XSockets.Plugin.Framework.dll
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\XSockets.Protocol.dll
-C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\XSockets.Protocol.Http.dll
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\XSockets.Protocol.Json.dll
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\XSockets.Protocol.Putty.dll
 C:\Users\Uffe\Documents\GitHub\XSocketsScaleOutDemo\src\ScaleOutDemo\ScaleOutDemo.ServerB\bin\Debug\XSockets.Protocol.Rfc6455.dll

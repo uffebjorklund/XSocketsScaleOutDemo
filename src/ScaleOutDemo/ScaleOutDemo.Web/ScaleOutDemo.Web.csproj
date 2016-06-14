@@ -66,8 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="scripts\XSockets\xsockets.latest.js" />
     <Content Include="scripts\XSockets\xsockets.latest.js.map" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -81,7 +82,6 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\knockout-3.4.0.debug.js" />
     <Content Include="scripts\knockout-3.4.0.js" />
-    <Content Include="scripts\XSockets\xsockets.latest.js" />
     <Content Include="scripts\XSockets\xsockets.latest.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
